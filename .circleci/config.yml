@@ -22,7 +22,7 @@ jobs:
     working_directory: ~/devops-groupproject
     docker:
       #putting in a ruby image instead of the node one in my CA
-      - image: circleci/ruby:3.0
+      - image: circleci/ruby:3.2
     steps:
       - checkout
       - run:
@@ -42,7 +42,7 @@ jobs:
 
   deploy:
     docker: 
-      - image:  circleci/ruby:3.0
+      - image:  circleci/ruby:3.2
     steps:
       - run:
           name: deploy-application
