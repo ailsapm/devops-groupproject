@@ -22,7 +22,8 @@ jobs:
     working_directory: ~/devops-groupproject
     docker:
       #putting in a ruby image instead of the node one in my CA
-      - image: circleci/ruby:3.2
+      #oh if only it were that simple, so my rails and gens req 3.2 but circleci doesnt have it so.. dockerhub (hope it works)
+      - image: ruby:3.2-slim-bookworm 
     steps:
       - checkout
       - run:
@@ -42,7 +43,7 @@ jobs:
 
   deploy:
     docker: 
-      - image:  circleci/ruby:3.2
+      - image:  ruby:3.2-slim-bookworm
     steps:
       - run:
           name: deploy-application
